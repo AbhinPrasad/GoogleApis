@@ -16,9 +16,6 @@ passport.use(
 			]
 		},
 		(accessToken, refreshToken, profile, cb) => {
-			console.log(profile);
-			console.log({ at: accessToken });
-			console.log({ rt: refreshToken });
 			return cb(null, profile);
 		}
 	)

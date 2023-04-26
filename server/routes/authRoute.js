@@ -21,9 +21,13 @@ router.get(
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect: `${process.env.CLIENT_URL}/upload`,
+		// successRedirect: 
 		failureRedirect: `${process.env.CLIENT_URL}/loginfailed`
-	})
+	}),
+	(req,res)=>{
+		// console.log(req.user,"req.user");
+		res.redirect(`${process.env.CLIENT_URL}/upload`,)
+	}
 );
 
 // router.get("/login/failed", loginFailed);

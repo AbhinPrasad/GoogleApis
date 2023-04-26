@@ -7,3 +7,12 @@ export const googleLogin = async () => {
 	const response = await API.get("/auth/google");
 	console.log(response);
 };
+
+export const uploadFile = async (formdata) => {
+	const response = await API.post("/upload", formdata, {
+		headers: {
+			"Content-Type": "multipart/formdata"
+		}
+	});
+	return response;
+};
