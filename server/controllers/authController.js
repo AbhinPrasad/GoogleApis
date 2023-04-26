@@ -1,5 +1,8 @@
+import dotenv from "dotenv"
+dotenv.config()
+
 export const loginFailed = async (req, res) => {
-	res.status(401).json({ message: "Login Failure" });
+	res.redirect(process.env.AUTH_FAILED_URL);
 };
 
 export const loginSuccess = async (req, res) => {

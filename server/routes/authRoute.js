@@ -21,13 +21,13 @@ router.get(
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect: process.env.CLIENT_URL,
-		failureRedirect: "/login/failed"
+		successRedirect: `${process.env.CLIENT_URL}/upload`,
+		failureRedirect: `${process.env.CLIENT_URL}/loginfailed`
 	})
 );
 
-router.get("/login/failed", loginFailed);
-router.get("/login/success", loginSuccess);
+// router.get("/login/failed", loginFailed);
+// router.get("/login/success", loginSuccess);
 router.get("/logout", logout);
 
 export default router;
